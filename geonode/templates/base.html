@@ -87,14 +87,12 @@
           </form>
           <ul class="nav navbar-nav navbar-right">
             {% if not user.is_authenticated and REGISTRATION_OPEN %}
-            <li><a href="{% url "account_signup" %}">{% trans "Register" %}</a></li>
+              <li><a href="{% url "account_signup" %}">{% trans "Register" %}</a></li>
             {% endif %}
 
-            <!-- Link to CityData User Guide -->
-            <li id="nav_ug">
-              <a href="/user_guide">{% trans "User guide" %}</a>
-            </li>
-            
+           {% block nav_guide %}
+           {% endblock %}
+
             {% if user.is_authenticated %}
             <li>
               <a href="#" data-toggle="modal" data-target="#UserModal" role="button" aria-expanded="false">

@@ -392,13 +392,15 @@
 
     <p>If you are experiencing problems, first check Troubleshooting above. If this does not provide a solution, contact the <a href="mailto:citydata@unsw.edu.au">CityData
   Librarian</a>.</p>
+    {% else %}
+    <p>Sign-in to see the full User Guide.</p>
     {% endif %}
   </div>
   <div class="col-md-4">
     {% if user.is_authenticated %}
     <div class="panel panel-default">
       <div class="panel-body">
-        <a href="/static/cityfutures/doc/CityData_User_Guide.pdf" target="_blank"><img src="/static/cityfutures/img/pdf_icon.png" width=24> View and print a PDF version of this user guide</a>
+        <a href="/guide/pdf/User" target="_blank"><img src="{{ STATIC_URL }}/cityfutures/img/pdf_icon.png" width=24> View and print this guide as PDF</a>
       </div>
     </div>
     {% endif %}
