@@ -54,7 +54,8 @@ geonode/static/lib/js/ZeroClipboard.min.js
 geonode/static/lib/js/moment.min.js
 
 # Uploaded files
-geonode/uploaded
+geonode/uploaded/layers
+geonode/uploaded/thumbs
 
 #Testing output
 .coverage
