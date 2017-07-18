@@ -87,3 +87,7 @@ development.db
 master
 slave
 geonode/static/cityfutures/img/user_guide/Thumbs.db
+geonode/static/cityfutures/img/Thumbs.db
+*.ppsx
+geonode/static/cityfutures/img/bannerOptions.xcf
+geonode/static/cityfutures/img/banners.gif
