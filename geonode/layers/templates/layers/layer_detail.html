@@ -152,10 +152,11 @@
     <div class="modal fade" id="download-layer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+<div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             <h4 class="modal-title" id="myModalLabel">Download or Connect to Layer</h4>
-            <p>Download this layer, or use the URLs below to connect to it directly from your desktop GIS via Web Map Service (WMS) or Web Feature Service (WFS).</p>
+            <p>Click a link below to download this layer or right-click and copy a URL to connect in your desktop GIS with Web Map Service (WMS) or Web Feature Service (WFS).</p>
+            <p>Your download will begin once the server has finished processing your request which may take <span class="text-warning">several minutes</span>. After you click a link, do not close or navigate away from this tab.</p>
           </div>
           <div class="modal-body">
             {% if links %}
