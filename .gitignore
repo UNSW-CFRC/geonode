@@ -53,6 +53,9 @@ geonode/static/lib/js/angular.min.js.map
 geonode/static/lib/js/ZeroClipboard.min.js
 geonode/static/lib/js/moment.min.js
 
+# Ontology files for testing
+geonode/static/cityfutures/ont
+
 # Uploaded files
 geonode/uploaded/layers
 geonode/uploaded/thumbs
