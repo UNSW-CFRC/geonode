@@ -318,6 +318,8 @@
 
     <h3><a name="publishing">Publishing data</a></h3>
 
+    <p>Before publishing data, please make sure it meets our quality guidelines for <a href="#metadata">Good metadata</a>, and you have made it look nice by <a href="#thumbnail">Setting a thumbnail image</a>.</p>
+
     <p>To publish your data, tick the boxes to allow ‘Anyone’ to both view and download the data:</p>
 
     <p><img border=0 width=146 height=58 id="Picture 5" src="/static/cityfutures/img/user_guide/image001.png">&nbsp;<img border=0 width=146 height=58 id="Picture 6" src="/static/cityfutures/img/user_guide/image002.png"></p>
@@ -348,12 +350,14 @@
     <table class='table table-bordered table-condensed'>
       <thead>
         <tr>
+          <th>#</th>
           <th>Problem</th>
           <th>Possible solution</th>
         </tr>
       </thead>
       <tbody>
         <tr>
+          <td><a name="trouble-1"><a href="#trouble-1" title="Link here">1</a></a></td>
           <td>Can’t login</td>
           <td>
             <p>Your username is not your email address, it is a short name you created specifically for CityData.</p>
@@ -363,18 +367,25 @@
           </td>
         </tr>
         <tr>
+          <td><a name="trouble-2"><a href="#trouble-2" title="Link here">2</a></a></td>
           <td>Data upload hangs with <b>Processing data, please wait…</b></td>
           <td>
             <p>The time taken to process data on upload is related to its size and data type. For example, a 64 MB polygon shapefile (SA2 for Australia) took less than 1 minute to process, while a 65 MB CSV file took 8 minutes. A 1.35 GB shapefile (NSW cadastre) took 59 minutes.</p>
             <p>If you think the upload is taking too long, check that you have used valid attribute names (see <a href="#attributes">Attribute names</a>). If not, fix the problem and rename your shapefile before uploading again.</p>
-
           </td>
         </tr>
         <tr>
+          <td><a name="trouble-3"><a href="#trouble-3" title="Link here">3</a></a></td>
           <td>Data upload terminates with <b>Unexpected exception</b></td>
           <td>Have you uploaded this dataset previously? If so, you must rename it before uploading again (see <a href="#replacing">Replacing a layer</a>).</td>
         </tr>
         <tr>
+          <td><a name="trouble-4"><a href="#trouble-4" title="Link here">4</a></a></td>
+          <td>Data upload error: <b>Unexpected exception Please upload only one type of file at a time</b></td>
+          <td>If you get this error when trying to upload a zipped shapefile, check the structure of your zip file. It should have the data files (.shp, .dbf etc) directly inside, without any folders or subfolders in the zip.</td>
+        </tr>        
+        <tr>
+          <td><a name="trouble-5"><a href="#trouble-5" title="Link here">5</a></a></td>
           <td>Can’t set thumbnail image</td>
           <td>After you set a thumbnail image for a layer or other resource, you must first clear your browser cache before your change will become visible in the Layers list (see <a href="#thumbnail">Setting a thumbnail image</a>).</td>
         </tr>
