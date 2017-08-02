@@ -32,6 +32,13 @@
     .navbar-brand {
         background-image: url(/static/cityfutures/img/logo.png);
     }
+  
+/*  Prevent CF logo wrapping to next line on Safari*/
+  @media only screen and (min-width: 992px) {
+  .ui.container.grid > .two.wide.computer.only.column {
+      width: 12.4%!important;
+    }
+  }
 </style>
 {% endblock %}
 
