@@ -73474,10 +73474,10 @@ gxp.plugins.MapBoxSource = Ext.extend(gxp.plugins.LayerSource, {
             layers[i] = new OpenLayers.Layer.TMS(
                 this[OpenLayers.String.camelize(config.name) + "Title"],
                 [
-                    "http://a.tiles.mapbox.com/mapbox/",
-                    "http://b.tiles.mapbox.com/mapbox/",
-                    "http://c.tiles.mapbox.com/mapbox/",
-                    "http://d.tiles.mapbox.com/mapbox/"
+                    "//a.tiles.mapbox.com/mapbox/",
+                    "//b.tiles.mapbox.com/mapbox/",
+                    "//c.tiles.mapbox.com/mapbox/",
+                    "//d.tiles.mapbox.com/mapbox/"
                 ],
                 OpenLayers.Util.applyDefaults({
                     attribution: /^world/.test(name) ?
@@ -73671,10 +73671,10 @@ gxp.plugins.MapQuestSource = Ext.extend(gxp.plugins.LayerSource, {
             new OpenLayers.Layer.OSM(
                 this.osmTitle,
                 [
-                    "http://otile1.mqcdn.com/tiles/1.0.0/map/${z}/${x}/${y}.png",
-                    "http://otile2.mqcdn.com/tiles/1.0.0/map/${z}/${x}/${y}.png",
-                    "http://otile3.mqcdn.com/tiles/1.0.0/map/${z}/${x}/${y}.png",
-                    "http://otile4.mqcdn.com/tiles/1.0.0/map/${z}/${x}/${y}.png"
+                    "//otile1.mqcdn.com/tiles/1.0.0/map/${z}/${x}/${y}.png",
+                    "//otile2.mqcdn.com/tiles/1.0.0/map/${z}/${x}/${y}.png",
+                    "//otile3.mqcdn.com/tiles/1.0.0/map/${z}/${x}/${y}.png",
+                    "//otile4.mqcdn.com/tiles/1.0.0/map/${z}/${x}/${y}.png"
                 ],
                 OpenLayers.Util.applyDefaults({                
                     attribution: this.osmAttribution,
@@ -73684,10 +73684,10 @@ gxp.plugins.MapQuestSource = Ext.extend(gxp.plugins.LayerSource, {
             new OpenLayers.Layer.OSM(
                 this.naipTitle,
                 [
-                    "http://otile1.mqcdn.com/tiles/1.0.0/sat/${z}/${x}/${y}.png",
-                    "http://otile2.mqcdn.com/tiles/1.0.0/sat/${z}/${x}/${y}.png",
-                    "http://otile3.mqcdn.com/tiles/1.0.0/sat/${z}/${x}/${y}.png",
-                    "http://otile4.mqcdn.com/tiles/1.0.0/sat/${z}/${x}/${y}.png"
+                    "//otile1.mqcdn.com/tiles/1.0.0/sat/${z}/${x}/${y}.png",
+                    "//otile2.mqcdn.com/tiles/1.0.0/sat/${z}/${x}/${y}.png",
+                    "//otile3.mqcdn.com/tiles/1.0.0/sat/${z}/${x}/${y}.png",
+                    "//otile4.mqcdn.com/tiles/1.0.0/sat/${z}/${x}/${y}.png"
                 ],
                 OpenLayers.Util.applyDefaults({
                     attribution: this.naipAttribution,
@@ -82564,7 +82564,7 @@ gxp.plugins.PicasaFeedSource = Ext.extend(gxp.plugins.FeedSource, {
     /** api: url [String]
      * The URL of the Picasa feed
      */
-    url: "http://picasaweb.google.com/data/feed/base/all?thumbsize=160c&",
+    url: "//picasaweb.google.com/data/feed/base/all?thumbsize=160c&",
 
     /** api:format [String]
      *  The default feature format for the feed source
@@ -82607,7 +82607,7 @@ gxp.plugins.PicasaFeedSource = Ext.extend(gxp.plugins.FeedSource, {
             // adds the thumbnail attribute to the feature
             createFeatureFromItem: function(item) {
                 var feature = OpenLayers.Format.GeoRSS.prototype.createFeatureFromItem.apply(this, arguments);
-                feature.attributes.thumbnail = this.getElementsByTagNameNS(item, "http://search.yahoo.com/mrss/", "thumbnail")[0].getAttribute("url");
+                feature.attributes.thumbnail = this.getElementsByTagNameNS(item, "//search.yahoo.com/mrss/", "thumbnail")[0].getAttribute("url");
                 feature.attributes.content = OpenLayers.Util.getXmlNodeValue(this.getElementsByTagNameNS(item, "*","summary")[0]);
                 return feature;
             }
@@ -82719,7 +82719,7 @@ gxp.plugins.YouTubeFeedSource = Ext.extend(gxp.plugins.FeedSource, {
     /** api: url [String]
      * The URL for the YouTube GeoRSS feed
      * **/
-    url: "http://gdata.youtube.com/feeds/api/videos?v=2&prettyprint=true&",
+    url: "//gdata.youtube.com/feeds/api/videos?v=2&prettyprint=true&",
 
     /**api: format [String]
      * The default format to use for YouTube features
@@ -82766,7 +82766,7 @@ gxp.plugins.YouTubeFeedSource = Ext.extend(gxp.plugins.FeedSource, {
             // adds the thumbnail attribute to the feature
             createFeatureFromItem: function(item) {
                 var feature = OpenLayers.Format.GeoRSS.prototype.createFeatureFromItem.apply(this, arguments);
-                feature.attributes.thumbnail = this.getElementsByTagNameNS(item, "http://search.yahoo.com/mrss/", "thumbnail")[4].getAttribute("url");
+                feature.attributes.thumbnail = this.getElementsByTagNameNS(item, "//search.yahoo.com/mrss/", "thumbnail")[4].getAttribute("url");
                 feature.attributes.content = OpenLayers.Util.getXmlNodeValue(this.getElementsByTagNameNS(item, "*", "summary")[0]);
                 return feature;
             }
