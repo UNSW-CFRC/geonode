@@ -21,7 +21,7 @@ from django.conf.urls import include, patterns, url
 from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
-from geonode.sitemap import LayerSitemap, MapSitemap
+from geonode.sitemap import LayerSitemap, MapSitemap, DevSitemap
 from django.views.generic import TemplateView
 from django.contrib import admin
 
@@ -46,7 +46,8 @@ js_info_dict = {
 
 sitemaps = {
     "layer": LayerSitemap,
-    "map": MapSitemap
+    "map": MapSitemap,
+    "dev": DevSitemap
 }
 
 urlpatterns = patterns('',

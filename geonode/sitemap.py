@@ -21,6 +21,7 @@ from django.contrib.sitemaps import Sitemap
 from geonode.maps.models import Layer, Map
 from guardian.shortcuts import get_objects_for_user
 from django.contrib.auth.models import AnonymousUser
+from django.core.urlresolvers import reverse
 
 class LayerSitemap(Sitemap):
     changefreq = "never"
@@ -40,3 +41,13 @@ class MapSitemap(Sitemap):
     def items(self):
         permitted = get_objects_for_user(AnonymousUser(), 'base.view_resourcebase')
         return Map.objects.filter(id__in=permitted)
+
+class DevSitemap(Sitemap):
+    changefreq = "never"
+    priority = 0.5
+
+    def items(self):
+        return ['developer']
+
+    def location(self, item):
+        return reverse(item)
