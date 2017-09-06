@@ -17,6 +17,11 @@
 #
 #########################################################################
 
+##########################################################################################
+# IF YOU EDIT THIS FILE & COPY IT TO A PRODUCTION SERVER, RUN ANSIBLE PROD.YML AGAIN:
+# ansible-playbook prod.yml -i prod --step --start-at-task="Update comment for robots.txt"
+##########################################################################################
+
 from django.conf.urls import include, patterns, url
 from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
