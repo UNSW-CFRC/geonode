@@ -114,7 +114,7 @@ urlpatterns = patterns('',
                        url(r'', include(api.urls)),
                        
                        # Keep out web crawlers: dev and test sites only
-                       (r'^robots.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: /", mimetype="text/plain")),
+                       (r'^robots.txt$', lambda r: HttpResponse("User-agent: *\n Disallow: /", mimetype="text/plain")),
                        )
 
 if "geonode.contrib.dynamic" in settings.INSTALLED_APPS:
