@@ -115,6 +115,10 @@ urlpatterns = patterns('',
                        
                        # Keep out web crawlers: dev and test sites only
                        (r'^robots.txt$', lambda r: HttpResponse("User-agent: *\n Disallow: /", mimetype="text/plain")),
+                       
+                      # CityViz test pages - for test server only
+
+
                        )
 
 if "geonode.contrib.dynamic" in settings.INSTALLED_APPS:
