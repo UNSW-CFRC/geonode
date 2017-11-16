@@ -117,7 +117,6 @@ urlpatterns = patterns('',
                        (r'^robots.txt$', lambda r: HttpResponse("User-agent: *\n Disallow: /", mimetype="text/plain")),
                        
                       # CityViz test pages - for test server only
-                       url(r'^viz/redcentre/$', TemplateView.as_view(template_name='^static/viz/redcentre/index.html$>'), name='redcentre'),
 
 
                        )
