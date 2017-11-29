@@ -1,0 +1,702 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://citydata.be.unsw.edu.au/ont/housing#"
+     xml:base="http://citydata.be.unsw.edu.au/ont/housing"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ogc-gml="http://loki.cae.drexel.edu/~wbs/ontology/2004/09/ogc-gml#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#location -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#location">
+        <rdfs:range rdf:resource="http://csdila.unimelb.edu.au/ontologies/geoboundary#FormalGeographicBoundary"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#location -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#location">
+        <rdfs:domain rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_0690cc5a_a15e_428a_bf58_3b13d47cfe64"/>
+        <rdfs:domain rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_b21908b3_a738_4822_ad2a_5965f01acd3d"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLObjectProperty_07b0b918_b8c9_4a32_aec3_084693069e90 -->
+
+    <owl:ObjectProperty rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLObjectProperty_07b0b918_b8c9_4a32_aec3_084693069e90">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_1becc0e8_4c5d_46a0_ae51_53c8939473d0"/>
+        <rdfs:range rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_b21908b3_a738_4822_ad2a_5965f01acd3d"/>
+        <rdfs:label xml:lang="en">residesIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLObjectProperty_3c68d5f3_8dd8_49b6_b8d0_5d1d39302a9a -->
+
+    <owl:ObjectProperty rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLObjectProperty_3c68d5f3_8dd8_49b6_b8d0_5d1d39302a9a">
+        <rdfs:subPropertyOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLObjectProperty_5bdd8372_eca4_4075_b827_aecd5353630a"/>
+        <rdfs:domain rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_5ece3458_bbf6_488b_9be0_1ef5e59f3847"/>
+        <rdfs:range rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_b21908b3_a738_4822_ad2a_5965f01acd3d"/>
+        <rdfs:label xml:lang="en">countsDwellings</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLObjectProperty_5bdd8372_eca4_4075_b827_aecd5353630a -->
+
+    <owl:ObjectProperty rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLObjectProperty_5bdd8372_eca4_4075_b827_aecd5353630a">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_9bb61d4d_5dda_44e1_aac9_9bb146726001"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label xml:lang="en">counts</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLObjectProperty_d5b51ab0_1897_4fb0_9787_3be81c9d8b81 -->
+
+    <owl:ObjectProperty rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLObjectProperty_d5b51ab0_1897_4fb0_9787_3be81c9d8b81">
+        <rdfs:subPropertyOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLObjectProperty_5bdd8372_eca4_4075_b827_aecd5353630a"/>
+        <rdfs:domain rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_fff2b565_5e34_474c_b2fc_bba618e33e6f"/>
+        <rdfs:range rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_1becc0e8_4c5d_46a0_ae51_53c8939473d0"/>
+        <rdfs:label xml:lang="en">countsPersons</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLDataProperty_552be830_ff69_4390_a66d_2f34ec5edc83 -->
+
+    <owl:DatatypeProperty rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLDataProperty_552be830_ff69_4390_a66d_2f34ec5edc83">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_0690cc5a_a15e_428a_bf58_3b13d47cfe64"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLDataProperty_d173e7aa_21e5_4554_999f_5c15d5842632 -->
+
+    <owl:DatatypeProperty rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLDataProperty_d173e7aa_21e5_4554_999f_5c15d5842632">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_9bb61d4d_5dda_44e1_aac9_9bb146726001"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label xml:lang="en">countValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_0687721c_a128_4edb_b17e_73c5cd74b8f5 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_0687721c_a128_4edb_b17e_73c5cd74b8f5">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_1a40149d_e408_4ada_b54e_c7657240c406"/>
+        <rdfs:label xml:lang="en">PersonCountByMigrationYear_Arrived19812000</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_0690cc5a_a15e_428a_bf58_3b13d47cfe64 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_0690cc5a_a15e_428a_bf58_3b13d47cfe64">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label xml:lang="en">Statistic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_076b45fb_c945_4ee7_8301_e99bc5b7f23e -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_076b45fb_c945_4ee7_8301_e99bc5b7f23e">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_7eaf5162_663e_4286_8e86_f7eb69fc10e9"/>
+        <rdfs:label xml:lang="en">PersonCountByBirthPlace_OceaniaAntarctica</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_0ec44c43_3ed9_4156_8221_70181146ecf3 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_0ec44c43_3ed9_4156_8221_70181146ecf3">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_9b36559f_dc81_4c0d_b1c7_76628e8251c2"/>
+        <rdfs:label xml:lang="en">PersonCountByLabourForceStatus_UnemployedInLabourForce</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_16eb524d_769a_43c0_b3b4_31d5e99c6ad1 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_16eb524d_769a_43c0_b3b4_31d5e99c6ad1">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_1a40149d_e408_4ada_b54e_c7657240c406"/>
+        <rdfs:label xml:lang="en">PersonCountByMigrationYear_Arrived18951940</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_18b9c54f_da5c_4df4_bf3c_bbac32ea4761 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_18b9c54f_da5c_4df4_bf3c_bbac32ea4761">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_9372362d_882f_401a_8405_053aa7f1779a"/>
+        <rdfs:label xml:lang="en">DwellingCountByTotalHouseholdIncome_A15002499</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_1a40149d_e408_4ada_b54e_c7657240c406 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_1a40149d_e408_4ada_b54e_c7657240c406">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_fff2b565_5e34_474c_b2fc_bba618e33e6f"/>
+        <rdfs:label xml:lang="en">PersonCountByMigrationYear</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_1becc0e8_4c5d_46a0_ae51_53c8939473d0 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_1becc0e8_4c5d_46a0_ae51_53c8939473d0">
+        <rdfs:label xml:lang="en">Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_1e0da558_d9b0_4324_bd83_3690d4cff40f -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_1e0da558_d9b0_4324_bd83_3690d4cff40f">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_fff2b565_5e34_474c_b2fc_bba618e33e6f"/>
+        <rdfs:label xml:lang="en">PersonCountByAge</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_24d69374_c0aa_4023_b730_2b459c87b218 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_24d69374_c0aa_4023_b730_2b459c87b218">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_feaa156a_db28_4382_a5a5_ba089c32999f"/>
+        <rdfs:label xml:lang="en">DwellingCountByTenureType_Purchasing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_3bad5279_230a_47d5_84ee_c525c61743b4 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_3bad5279_230a_47d5_84ee_c525c61743b4">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_feaa156a_db28_4382_a5a5_ba089c32999f"/>
+        <rdfs:label xml:lang="en">DwellingCountByTenureType_PrivateRenting</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_40c67f05_4271_4882_837d_4d8d644d30f9 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_40c67f05_4271_4882_837d_4d8d644d30f9">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_feaa156a_db28_4382_a5a5_ba089c32999f"/>
+        <rdfs:label xml:lang="en">DwellingCountByTenureType_OwnsOutright</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_4167ea81_db75_467a_91aa_f12a48e46a89 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_4167ea81_db75_467a_91aa_f12a48e46a89">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_bdc86e9e_66a2_4c2e_be30_9847c6f13877"/>
+        <rdfs:label xml:lang="en">DwellingCountByFamilyHouseholdComposition_LonePersonHouseholds</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_439c055d_3ea6_4ae4_bf7a_455736c010cb -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_439c055d_3ea6_4ae4_bf7a_455736c010cb">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_bdc86e9e_66a2_4c2e_be30_9847c6f13877"/>
+        <rdfs:label xml:lang="en">DwellingCountByFamilyHouseholdComposition_MultipleFamilyHouseholds</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_4c614b7e_3e0a_428c_9698_493d5ad7303b -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_4c614b7e_3e0a_428c_9698_493d5ad7303b">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_bdc86e9e_66a2_4c2e_be30_9847c6f13877"/>
+        <rdfs:label xml:lang="en">DwellingCountByFamilyHouseholdComposition_FamilyHouseholdsWithoutChildren</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_5445c8af_051b_4fdf_92bb_3780905eb414 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_5445c8af_051b_4fdf_92bb_3780905eb414">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_e539663a_3244_4340_bbd5_395131db1751"/>
+        <rdfs:label xml:lang="en">PersonCountByOccupation_ManagersProfessionalsAndTechnicians</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_5788bb46_eeb2_460c_bbc1_82af83573eea -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_5788bb46_eeb2_460c_bbc1_82af83573eea">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_7eaf5162_663e_4286_8e86_f7eb69fc10e9"/>
+        <rdfs:label xml:lang="en">PersonCountByBirthPlace_NorthAfricaMiddleEast</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_590c2d72_4023_4b70_88b8_45abbcd5a49d -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_590c2d72_4023_4b70_88b8_45abbcd5a49d">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_1a40149d_e408_4ada_b54e_c7657240c406"/>
+        <rdfs:label xml:lang="en">PersonCountByMigrationYear_Arrived20012011</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_5c00c8fb_04a6_42f9_9b9f_a89f3a2b58a2 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_5c00c8fb_04a6_42f9_9b9f_a89f3a2b58a2">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_9372362d_882f_401a_8405_053aa7f1779a"/>
+        <rdfs:label xml:lang="en">DwellingCountByTotalHouseholdIncome_A400799</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_5cdce6df_eed0_40f0_850a_6560a1d1ca8b -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_5cdce6df_eed0_40f0_850a_6560a1d1ca8b">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_9b36559f_dc81_4c0d_b1c7_76628e8251c2"/>
+        <rdfs:label xml:lang="en">PersonCountByLabourForceStatus_PartTimeEmployed</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_5ece3458_bbf6_488b_9be0_1ef5e59f3847 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_5ece3458_bbf6_488b_9be0_1ef5e59f3847">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_9bb61d4d_5dda_44e1_aac9_9bb146726001"/>
+        <rdfs:label xml:lang="en">DwellingCount</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_625d07e5_c9e9_4b32_b6b3_126c5c6050ae -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_625d07e5_c9e9_4b32_b6b3_126c5c6050ae">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_bdc86e9e_66a2_4c2e_be30_9847c6f13877"/>
+        <rdfs:label xml:lang="en">DwellingCountByFamilyHouseholdComposition_GroupHouseholds</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_63d93349_2026_47f0_b5bc_495bd4c727d6 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_63d93349_2026_47f0_b5bc_495bd4c727d6">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_1e0da558_d9b0_4324_bd83_3690d4cff40f"/>
+        <rdfs:label xml:lang="en">PersonCountByAge_Over65</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_6a91e3ed_d981_4931_96d2_481574a39929 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_6a91e3ed_d981_4931_96d2_481574a39929">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_1e0da558_d9b0_4324_bd83_3690d4cff40f"/>
+        <rdfs:label xml:lang="en">PersonCountByAgeUnder15</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_6c8593f7_4c5c_4d3f_beb7_62da4c343488 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_6c8593f7_4c5c_4d3f_beb7_62da4c343488">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_7eaf5162_663e_4286_8e86_f7eb69fc10e9"/>
+        <rdfs:label xml:lang="en">PersonCountByBirthPlace_SouthernCentralAsia</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_6ec4a33c_e9b1_463f_a6da_acf908d48538 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_6ec4a33c_e9b1_463f_a6da_acf908d48538">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_7eaf5162_663e_4286_8e86_f7eb69fc10e9"/>
+        <rdfs:label xml:lang="en">PersonCountByBirthPlace_SouthernEasternEurope</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_6fffa601_39ef_4b18_bfb5_3dfc5837ad3e -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_6fffa601_39ef_4b18_bfb5_3dfc5837ad3e">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_9372362d_882f_401a_8405_053aa7f1779a"/>
+        <rdfs:label xml:lang="en">DwellingCountByTotalHouseholdIncome_UnderA400</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_78769429_29ca_4095_b20e_556afc085da8 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_78769429_29ca_4095_b20e_556afc085da8">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_1a40149d_e408_4ada_b54e_c7657240c406"/>
+        <rdfs:label xml:lang="en">PersonCountByMigrationYear_Arrived19411960</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_7a2290fc_72e7_4f2a_bb23_dbc3cb5d01c2 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_7a2290fc_72e7_4f2a_bb23_dbc3cb5d01c2">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_e539663a_3244_4340_bbd5_395131db1751"/>
+        <rdfs:label xml:lang="en">PersonCountByOccupation_ServiceAdminAndSales</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_7eaf5162_663e_4286_8e86_f7eb69fc10e9 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_7eaf5162_663e_4286_8e86_f7eb69fc10e9">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_fff2b565_5e34_474c_b2fc_bba618e33e6f"/>
+        <rdfs:label xml:lang="en">PersonCountByBirthPlace</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_7f3659ad_a3b7_4238_baff_b39380342258 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_7f3659ad_a3b7_4238_baff_b39380342258">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_7eaf5162_663e_4286_8e86_f7eb69fc10e9"/>
+        <rdfs:label xml:lang="en">PersonCountByBirthPlace_NorthEastAsia</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_81380f4c_de61_46b7_9fb4_aeb26b123960 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_81380f4c_de61_46b7_9fb4_aeb26b123960">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_1e0da558_d9b0_4324_bd83_3690d4cff40f"/>
+        <rdfs:label xml:lang="en">PersonCountByAge_3554</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_8438654d_e249_4ec0_9d68_3e0575ea60b0 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_8438654d_e249_4ec0_9d68_3e0575ea60b0">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_9372362d_882f_401a_8405_053aa7f1779a"/>
+        <rdfs:label xml:lang="en">DwellingCountByTotalHouseholdIncome_A8001499</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_8526be7b_5365_49cb_8e30_2a01adcf583a -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_8526be7b_5365_49cb_8e30_2a01adcf583a">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_9372362d_882f_401a_8405_053aa7f1779a"/>
+        <rdfs:label xml:lang="en">DwellingCountByTotalHouseholdIncome_A4000AndOver</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_8988ecb9_682f_47ef_b74a_33db65e8755c -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_8988ecb9_682f_47ef_b74a_33db65e8755c">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_1e0da558_d9b0_4324_bd83_3690d4cff40f"/>
+        <rdfs:label xml:lang="en">PersonCountByAge_2534</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_9372362d_882f_401a_8405_053aa7f1779a -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_9372362d_882f_401a_8405_053aa7f1779a">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_5ece3458_bbf6_488b_9be0_1ef5e59f3847"/>
+        <rdfs:label xml:lang="en">DwellingCountByTotalHouseholdIncome</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_99f69a63_ea72_42a6_8c6f_99a93eabb1be -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_99f69a63_ea72_42a6_8c6f_99a93eabb1be">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_7eaf5162_663e_4286_8e86_f7eb69fc10e9"/>
+        <rdfs:label xml:lang="en">PersonCountByBirthPlace_SouthEastAsia</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_9b36559f_dc81_4c0d_b1c7_76628e8251c2 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_9b36559f_dc81_4c0d_b1c7_76628e8251c2">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_fff2b565_5e34_474c_b2fc_bba618e33e6f"/>
+        <rdfs:label xml:lang="en">PersonCountByLabourForceStatus</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_9bb61d4d_5dda_44e1_aac9_9bb146726001 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_9bb61d4d_5dda_44e1_aac9_9bb146726001">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_0690cc5a_a15e_428a_bf58_3b13d47cfe64"/>
+        <rdfs:label xml:lang="en">Count</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_9cd1391d_b90a_4d89_b1cb_c941163f4de1 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_9cd1391d_b90a_4d89_b1cb_c941163f4de1">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_7eaf5162_663e_4286_8e86_f7eb69fc10e9"/>
+        <rdfs:label xml:lang="en">PersonCountByBirthPlace_SubSaharanAfrica</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_9ed02f26_214d_4733_b195_bcf9dcdd348e -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_9ed02f26_214d_4733_b195_bcf9dcdd348e">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_7eaf5162_663e_4286_8e86_f7eb69fc10e9"/>
+        <rdfs:label xml:lang="en">PersonCountByBirthPlace_Americas</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_a438289b_bea0_42a5_8475_5d3d3478af2f -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_a438289b_bea0_42a5_8475_5d3d3478af2f">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_9372362d_882f_401a_8405_053aa7f1779a"/>
+        <rdfs:label xml:lang="en">DwellingCountByTotalHouseholdIncome_A2500399</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_a8f24835_4e95_4af0_a993_d2bc5392fb57 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_a8f24835_4e95_4af0_a993_d2bc5392fb57">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_9b36559f_dc81_4c0d_b1c7_76628e8251c2"/>
+        <rdfs:label xml:lang="en">PersonCountByLabourForceStatus_FullTimeEmployed</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_a973c18b_9e3c_406a_8563_acccc50a43e8 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_a973c18b_9e3c_406a_8563_acccc50a43e8">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_9b36559f_dc81_4c0d_b1c7_76628e8251c2"/>
+        <rdfs:label xml:lang="en">PersonCountByLabourForceStatus_NotInLabour</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_a9ddc450_90b3_4d30_b9ce_2383063af478 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_a9ddc450_90b3_4d30_b9ce_2383063af478">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_fbe92c6d_38bc_4940_a2e4_5fa9fc3e2ba4"/>
+        <rdfs:label xml:lang="en">DwellingCountByDwellingType_SeparateHouse</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_b21908b3_a738_4822_ad2a_5965f01acd3d -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_b21908b3_a738_4822_ad2a_5965f01acd3d">
+        <rdfs:label xml:lang="en">Dwelling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_bd5d61b7_5388_4bf1_a8bc_6643edb5897a -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_bd5d61b7_5388_4bf1_a8bc_6643edb5897a">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_1e0da558_d9b0_4324_bd83_3690d4cff40f"/>
+        <rdfs:label xml:lang="en">PersonCountByAge_5564</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_bdc86e9e_66a2_4c2e_be30_9847c6f13877 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_bdc86e9e_66a2_4c2e_be30_9847c6f13877">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_5ece3458_bbf6_488b_9be0_1ef5e59f3847"/>
+        <rdfs:label xml:lang="en">DwellingCountByFamilyHouseholdComposition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_c59a6027_0d9c_478d_bc3b_bccbdb064260 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_c59a6027_0d9c_478d_bc3b_bccbdb064260">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_e539663a_3244_4340_bbd5_395131db1751"/>
+        <rdfs:label xml:lang="en">PersonCountByOccupation_MachineAndLabourer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_c7fdcb63_3c96_40aa_b424_bd605067f88f -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_c7fdcb63_3c96_40aa_b424_bd605067f88f">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_9b36559f_dc81_4c0d_b1c7_76628e8251c2"/>
+        <rdfs:label xml:lang="en">PersonCountByLabourForceStatus_NotStated</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_d0bb8062_b7e7_44f6_8b69_c4335c316eac -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_d0bb8062_b7e7_44f6_8b69_c4335c316eac">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_bdc86e9e_66a2_4c2e_be30_9847c6f13877"/>
+        <rdfs:label xml:lang="en">DwellingCountByFamilyHouseholdComposition_FamilyHouseholdsWithChildren</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_d74896bf_498f_4579_8274_69eaedc8867e -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_d74896bf_498f_4579_8274_69eaedc8867e">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_1a40149d_e408_4ada_b54e_c7657240c406"/>
+        <rdfs:label xml:lang="en">PersonCountByMigrationYear_Arrived19611980</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_da3f3f61_f3e8_4b1d_b085_c8d6f54103ba -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_da3f3f61_f3e8_4b1d_b085_c8d6f54103ba">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_fbe92c6d_38bc_4940_a2e4_5fa9fc3e2ba4"/>
+        <rdfs:label xml:lang="en">DwellingCountByDwellingType_SemidetachedTerraceTownhouse</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_de7ae106_84e2_437b_9209_74bcd7076cec -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_de7ae106_84e2_437b_9209_74bcd7076cec">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_7eaf5162_663e_4286_8e86_f7eb69fc10e9"/>
+        <rdfs:label xml:lang="en">PersonCountByBirthPlace_NorthWestEurope</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_e4fbcbd8_54c2_4544_a906_3b92005efd6e -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_e4fbcbd8_54c2_4544_a906_3b92005efd6e">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_fbe92c6d_38bc_4940_a2e4_5fa9fc3e2ba4"/>
+        <rdfs:label xml:lang="en">DwellingCountByDwellingType_Flat</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_e539663a_3244_4340_bbd5_395131db1751 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_e539663a_3244_4340_bbd5_395131db1751">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_fff2b565_5e34_474c_b2fc_bba618e33e6f"/>
+        <rdfs:label xml:lang="en">PersonCountByOccupation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_fa409b04_155f_4544_8c21_958df042e1f6 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_fa409b04_155f_4544_8c21_958df042e1f6">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_9372362d_882f_401a_8405_053aa7f1779a"/>
+        <rdfs:label xml:lang="en">DwellingCountByTotalHouseholdIncome_NoOrNillIncome</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_fabb9ce8_65f2_423f_ab60_2d9ba3162c82 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_fabb9ce8_65f2_423f_ab60_2d9ba3162c82">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_1e0da558_d9b0_4324_bd83_3690d4cff40f"/>
+        <rdfs:label xml:lang="en">PersonCountByAge_1524</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_fbe92c6d_38bc_4940_a2e4_5fa9fc3e2ba4 -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_fbe92c6d_38bc_4940_a2e4_5fa9fc3e2ba4">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_5ece3458_bbf6_488b_9be0_1ef5e59f3847"/>
+        <rdfs:label xml:lang="en">DwellingCountByDwellingType</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_fd7d46aa_9b1f_4c3d_8daf_f0a897e8c08a -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_fd7d46aa_9b1f_4c3d_8daf_f0a897e8c08a">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_fff2b565_5e34_474c_b2fc_bba618e33e6f"/>
+        <rdfs:label xml:lang="en">PersonCountHomeless</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_feaa156a_db28_4382_a5a5_ba089c32999f -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_feaa156a_db28_4382_a5a5_ba089c32999f">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_5ece3458_bbf6_488b_9be0_1ef5e59f3847"/>
+        <rdfs:label xml:lang="en">DwellingCountByTenureType</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_fff2b565_5e34_474c_b2fc_bba618e33e6f -->
+
+    <owl:Class rdf:about="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_fff2b565_5e34_474c_b2fc_bba618e33e6f">
+        <rdfs:subClassOf rdf:resource="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/Test_no_imports.owl#OWLClass_9bb61d4d_5dda_44e1_aac9_9bb146726001"/>
+        <rdfs:label xml:lang="en">PersonCount</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

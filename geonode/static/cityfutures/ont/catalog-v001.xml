@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://purl.org/uai-ontologies/geoboundaries/1.0/elements" uri="http://purl.org/uai-ontologies/geoboundaries/1.0"/>
+    <uri id="Imports Wizard Entry" name="http://purl.org/uai-ontologies/geoboundaries/1.0/elements" uri="http://purl.org/uai-ontologies/geoboundaries/1.0"/>
+    <uri id="Imports Wizard Entry" name="http://csdila.unimelb.edu.au/ontologies/f/geoBoundaries.owl" uri="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/geoBoundaries.owl"/>
+    <uri id="Imports Wizard Entry" name="http://csdila.unimelb.edu.au/ontologies/f/geoBoundaries.owl" uri="file:////INFPWFS1400.ad.unsw.edu.au/Staff109$/z8290362/GitHub/geonode/geonode/static/cityfutures/ont/geoBoundaries.owl"/>
+    <uri id="Imports Wizard Entry" name="http://csdila.unimelb.edu.au/ontologies/boundary/1.0" uri="http://csdila.unimelb.edu.au/ontologies/BoundaryOnt.owl"/>
+    <uri id="Imports Wizard Entry" name="http://csdila.unimelb.edu.au/ontologies/geoboundary" uri="http://csdila.unimelb.edu.au/ontologies/f/geoBoundaries.owl"/>
+    <uri id="Imports Wizard Entry" name="http://ontology.eil.utoronto.ca/ISO37120.owl" uri="file:////INFPWFS1400.ad.unsw.edu.au/Staff109$/z8290362/Work/UADI/Ontologies/ISO37120.owl"/>
+    <uri id="User Entered Import Resolution" name="http://csdila.unimelb.edu.au/ontologies/geoboundary" uri="file:////INFPWFS1400.ad.unsw.edu.au/Staff109$/z8290362/GitHub/geonode/geonode/static/cityfutures/ont/http:/csdila.unimelb.edu.au/ontologies/f/geoBoundaries.owl"/>
+    <group id="Folder Repository, directory=file:////INFPWFS1400.ad.unsw.edu.au/Staff109$/z8290362/GitHub/geonode/geonode/static/cityfutures/ont/, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1502068335678" name="http://citydata.be.unsw.edu.au/ont/housing" uri="Test_no_imports.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1502068335678" name="http://csdila.unimelb.edu.au/ontologies/geoboundary" uri="geoBoundaries.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1502068335678" name="https://citydata-test.be.unsw.edu.au/ont/" uri="old/UNSW_UADI_2017-06-08.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1502068335678" name="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/UNSW_UADI.owl" uri="UNSW_UADI.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1502068335678" name="https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/UNSW_UADI_20170803.owl" uri="UNSW_UADI_20170803.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1502068335678" name="shadowed:http://citydata.be.unsw.edu.au/ont/housing" uri="old/UNSW_UADI.StatisticAsEntity.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1502068335678" name="shadowed:https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/UNSW_UADI.owl" uri="old/UNSW_UAD2017-07-19.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1502068335678" name="shadowed:https://citydata-test.be.unsw.edu.au/static/cityfutures/ont/UNSW_UADI.owl" uri="old/UNSW_UADI%20homeless%20as%20data%20property.owl"/>
+    </group>
+</catalog>
