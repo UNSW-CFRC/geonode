@@ -1,1 +1,64 @@
 {% extends "base.html" %}
+
+{% block extra_head %}
+  <style>
+    .navbar-fixed-top {
+      position: static;
+    }
+    
+    header .nav-wrapper .main-nav {
+      height: 89px;
+      width: 100%;
+      background: #FFF;
+      padding: 25px 0;
+      position: fixed;
+      z-index: 42;
+    }
+
+</style>
+{% endblock %}
+
+{% block header %}
+  <header role="banner" class="hidden-print">
+    <div class="nav-wrapper">
+      <nav class="main-nav" data-magellan-expedition="fixed">
+        <div class="row">
+          <div class="small-12 large-4 columns logo-container">
+            <a class="logo" href="https://www.plusalliance.org/" title="PLuS Alliance"><img src="https://www.plusalliance.org/sites/default/files/small_logo_web_0.png" alt="PLuS Alliance"></a>
+          </div>
+          <div class="small-12 large-8 columns nav-items">
+            <dl class="sub-nav">
+              <div data-mediasize="1007" class="responsive-menus responsive-menus-0-1 absolute"><span class="toggler">Menu</span>
+                <ul class="menu nav navbar-nav responsive-menus-simple" id="rm-no-id-main">
+                  <li class="first expanded dropdown"><a href="https://www.plusalliance.org/learning" class="disabled dropdown-toggle" data-target="#" data-toggle="dropdown">Learning <span class="caret"></span></a>
+                    <ul class="dropdown-menu" id="rm-no-id-1">
+                      <li class="first last leaf"><a href="https://www.plusalliance.org/global-learning-network-programmes">Programmes</a></li>
+                    </ul>
+                  </li>
+                  <li class="expanded active-trail active dropdown"><a href="https://www.plusalliance.org/research" class="active-trail dropdown-toggle" data-target="#" data-toggle="dropdown">Research <span class="caret"></span></a>
+                    <ul class="dropdown-menu" id="rm-no-id-2">
+                      <li class="first leaf"><a href="https://www.plusalliance.org/fellows">Fellows</a></li>
+                      <li class="last leaf active-trail active active"><a href="https://www.plusalliance.org/plus-research-projects" class="active-trail active">Projects</a></li>
+                    </ul>
+                  </li>
+                  <li class="leaf"><a href="https://www.plusalliance.org/press-room">News</a></li>
+                  <li class="last leaf"><a href="https://www.plusalliance.org/contact">Contact</a></li>
+                </ul>
+              </div>
+            </dl>
+          </div>
+          <div id="nav-trigger">
+            <span class="hamburger hamburger--spin" type="button">
+                        <span class="hamburger-box">
+                          <span class="hamburger-inner"></span>
+            </span>
+            </span>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  {{block.super}}
+
+{% endblock %}
