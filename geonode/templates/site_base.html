@@ -17,47 +17,70 @@
 {% endblock %}
 
 {% block extra_head %}
-<link href="https://cityfutures.be.unsw.edu.au/static/semantic.min.css" rel="stylesheet" />
+<link href="/static/cityfutures/css/semantic.min.css" rel="stylesheet" />
 
-<link rel="icon" type="image/png" href="https://cityfutures.be.unsw.edu.au/static/favicon/favicon-32x32.png" sizes="32x32" />
-<link rel="icon" type="image/png" href="https://cityfutures.be.unsw.edu.au/static/favicon/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/vnd.microsoft.icon" href="/static/cityfutures/img/favicon.ico">
 
 <style>
+    .page-header {
+        margin-top: 91px;
+  }
     .navbar-fixed-top {
-        position: static;
+        height: 51px;
+/*        position: static;*/
     }
-        .site-logo a {
+    .site-logo a {
         text-decoration: none;
     }
     .navbar-brand {
         background-image: url(/static/cityfutures/img/logo.png);
     }
+    .navbar-parent {
+        background-image: url(/static/cityfutures/img/pluslogo_reversed.png);
+    }
+    .navbar-parent:hover {
+        background-image: url(/static/cityfutures/img/pluslogo_reversed_mono.png);
+    }
   
-/*  Prevent CF logo wrapping to next line on Safari*/
+  /* Prevent CF logo wrapping to next line on Safari*/
   @media only screen and (min-width: 992px) {
   .ui.container.grid > .two.wide.computer.only.column {
       width: 12.4%!important;
     }
   }
+
+  /* PLuSData footer logo */
+  .footer-logo {
+    margin: auto;
+    width: 385px
+  }
+
+  /* Shrink PLuSData footer logo for mobile */
+  @media only screen and (max-width: 64.063em) {
+    .footer-logo {
+      max-width: 250px;
+    }
+  }
+  
+  .footer-terms {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 34px;
+  }
+  .footer-terms a {
+    color: rgb(46, 46, 46);
+  }
+  .footer-terms a:hover {
+    color: #bb1f35;
+    border-bottom: 2px solid #bb1f35;
+  }
+  
 </style>
 {% endblock %}
 
-{% block header %}
-    <div style="width: 100%; border-bottom: 10px solid #FC0;">
-        <div id="unsw-header-wrapper" class="ui container grid">
-            <div class="fourteen wide computer sixteen wide mobile column">
-                <a href="https://www.unsw.edu.au"><img class="ui left floated image unsw-logo" src="https://cityfutures.be.unsw.edu.au/static/images/01_Sydney-Landscape_web.png"></a>
-                <h1 class="site-logo">
-                    <span class="site-name"><a href="https://cityfutures.be.unsw.edu.au/" title="home">City Futures Research Centre</a></span>
-                    <span class="site-name-subtitle"><a href="http://www.be.unsw.edu.au">UNSW Built Environment</a></span>
-                </h1>
-            </div>
-            <div class="two wide computer only column">
-                <a href="https://cityfutures.be.unsw.edu.au/"><img class="ui right floated image research-centre-image-logo" src="https://cityfutures.be.unsw.edu.au/static/images/CF-logo.png"></a>
-            </div>
-        </div>
-    </div>
-    {{ block.super }}
+{% block parent_link %}
+          <a class="navbar-brand navbar-parent" href="https://www.plusalliance.org">PLuS Alliance</a>
 {% endblock %}
 
 {% block nav_guide %}
@@ -86,28 +109,17 @@
 
     <!-- Footer -->
 
-    <div class="ui hidden divider"></div>
-
-    <div id="footer" class="ui inverted vertical segment">
-        <div class="ui stackable two column container grid">
-            <div class="column">
-                <p>Telephone +61 2 9385 7777<span>\\</span>UNSW Sydney NSW 2052 Australia</p>
-                <p>CRICOS Provider Code 00098G<span>\\</span>ABN 57 195 873 179</p>
-                <p>Copyright © 2017 UNSW Built Environment Authorised by Built Environment</p>
-            </div>
-
-            <div class="column">
-                <p>Follow us on: <a href="https://twitter.com/unswcityfutures"><i class="inverted blue twitter icon"></i></a></p>
-                <p></p>
-                <div class="ui unsw-site-menu inverted horizontal list">
-                    <a class="item" href="http://www.unsw.edu.au/gen/pad/privacy.html" title="Privacy policy">Privacy Policy</a>
-                    <a class="item" href="http://www.unsw.edu.au/gen/pad/copyright.html" title="Copyright &amp; Disclaimer">Copyright &amp; Disclaimer</a>
-                    <a class="item" href="http://www.unsw.edu.au/gen/ced/accessibility.html" title="Accessibility">Accessibility</a>
-                    <a class="item" href="mailto:cityfutures@unsw.edu.au?Subject=Site%20feedback" title="Site feedback">Site feedback</a>
-                </div>
-            </div>
-
+    <footer class="footer" role="contentinfo">
+      <div class="row">
+        <div class="footer-logo">
+          <img src="/static/cityfutures/img/plus_alliance_logo_new_0.png" alt="PLuS Alliance" width="100%">
         </div>
-    </div>
+      </div>
+      <div class="row">
+        <div class="footer-terms">
+          <a href="https://www.plusalliance.org/terms-use">Terms of Use</a>
+        </div>
+      </div>
+    </footer>
     <!-- End Footer -->
 {% endblock footer %}
