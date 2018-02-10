@@ -81,6 +81,12 @@ def grab(src, dest, name):
 ])
 def setup_geoserver(options):
     """Prepare a testing instance of GeoServer."""
+    from geonode.settings import INSTALLED_APPS
+
+    # only start if using Geoserver backend
+    if 'geonode.geoserver' not in INSTALLED_APPS:
+        return
+
     download_dir = path('downloaded')
     if not download_dir.exists():
         download_dir.makedirs()
@@ -117,6 +123,47 @@ def setup_geoserver(options):
         z.extractall(webapp_dir)
 
     _install_data_dir()
+
+
+@task
+def setup_qgis_server(options):
+    """Prepare a testing instance of QGIS Server."""
+    from geonode.settings import INSTALLED_APPS
+
+    # only start if using QGIS Server backend
+    if 'geonode.qgis_server' not in INSTALLED_APPS:
+        return
+
+    # QGIS Server testing instance run on top of docker
+    try:
+        sh('scripts/misc/docker_check.sh')
+    except BaseException:
+        info("You need to have docker and docker-compose installed.")
+        return
+
+    info('Docker and docker-compose were installed.')
+    info('Proceeded to setup QGIS Server.')
+    info('Create QGIS Server related folder.')
+
+    try:
+        os.makedirs('geonode/qgis_layer')
+    except BaseException:
+        pass
+
+    try:
+        os.makedirs('geonode/qgis_tiles')
+    except BaseException:
+        pass
+
+    all_permission = 0o777
+    os.chmod('geonode/qgis_layer', all_permission)
+    stat = os.stat('geonode/qgis_layer')
+    info('Mode : %o' % stat.st_mode)
+    os.chmod('geonode/qgis_tiles', all_permission)
+    stat = os.stat('geonode/qgis_tiles')
+    info('Mode : %o' % stat.st_mode)
+
+    info('QGIS Server related folder successfully setup.')
 
 
 def _install_data_dir():
@@ -187,6 +234,7 @@ def static(options):
 @task
 @needs([
     'setup_geoserver',
+    'setup_qgis_server',
 ])
 def setup(options):
     """Get dependencies and prepare a GeoNode development environment."""
@@ -280,6 +328,7 @@ def sync(options):
     sh("python manage.py loaddata sample_admin.json")
     sh("python manage.py loaddata geonode/base/fixtures/default_oauth_apps.json")
     sh("python manage.py loaddata geonode/base/fixtures/initial_data.json")
+    sh("python manage.py set_all_layers_alternate")
 
 
 @task
@@ -347,6 +396,7 @@ def package(options):
 
 @task
 @needs(['start_geoserver',
+        'start_qgis_server',
         'start_django'])
 @cmdopts([
     ('bind=', 'b', 'Bind server to provided IP address and port number.'),
@@ -376,17 +426,48 @@ def stop_geoserver():
     """
     Stop GeoServer
     """
+    from geonode.settings import INSTALLED_APPS
+
+    # only start if using Geoserver backend
+    if 'geonode.geoserver' not in INSTALLED_APPS:
+        return
     kill('java', 'geoserver')
 
 
 @task
+@cmdopts([
+    ('qgis_server_port=', 'p', 'The port of the QGIS Server instance.')
+])
+def stop_qgis_server():
+    """
+    Stop QGIS Server Backend.
+    """
+    from geonode.settings import INSTALLED_APPS
+
+    # only start if using QGIS Server backend
+    if 'geonode.qgis_server' not in INSTALLED_APPS:
+        return
+    port = options.get('qgis_server_port', '9000')
+
+    sh(
+        'docker-compose -f docker-compose-qgis-server.yml down',
+        env={
+            'GEONODE_PROJECT_PATH': os.getcwd(),
+            'QGIS_SERVER_PORT': port
+        })
+
+
+@task
+@needs([
+    'stop_geoserver',
+    'stop_qgis_server'
+])
 def stop():
     """
     Stop GeoNode
     """
     # windows needs to stop the geoserver first b/c we can't tell which python
     # is running, so we kill everything
-    stop_geoserver()
     info("Stopping GeoNode ...")
     stop_django()
 
@@ -509,6 +590,30 @@ def start_geoserver(options):
         info(('GeoServer never started properly or timed out.'
               'It may still be running in the background.'))
         sys.exit(1)
+
+
+@task
+@cmdopts([
+    ('qgis_server_port=', 'p', 'The port of the QGIS Server instance.')
+])
+def start_qgis_server():
+    """Start QGIS Server instance with GeoNode related plugins."""
+    from geonode.settings import INSTALLED_APPS
+
+    # only start if using QGIS Serrver backend
+    if 'geonode.qgis_server' not in INSTALLED_APPS:
+        return
+    info('Starting up QGIS Server...')
+
+    port = options.get('qgis_server_port', '9000')
+
+    sh(
+        'docker-compose -f docker-compose-qgis-server.yml up -d qgis-server',
+        env={
+            'GEONODE_PROJECT_PATH': os.getcwd(),
+            'QGIS_SERVER_PORT': port
+        })
+    info('QGIS Server is up.')
 
 
 @task
@@ -652,6 +757,7 @@ def deb(options):
 
     # Workaround for git-dch bug
     # http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=594580
+    sh('rm -rf %s/.git' % (os.path.realpath('package')))
     sh('ln -s %s %s' % (os.path.realpath('.git'), os.path.realpath('package')))
 
     with pushd('package'):
@@ -659,16 +765,22 @@ def deb(options):
         # Install requirements
         # sh('sudo apt-get -y install debhelper devscripts git-buildpackage')
 
-        sh(('git-dch --spawn-editor=snapshot --git-author --new-version=%s'
-            ' --id-length=6 --ignore-branch --release' % (simple_version)))
+        # sh(('git-dch --spawn-editor=snapshot --git-author --new-version=%s'
+        #     ' --id-length=6 --ignore-branch --release' % (simple_version)))
         # In case you publish from Ubuntu Xenial (git-dch is removed from upstream)
         #  use the following line instead:
         # sh(('gbp dch --spawn-editor=snapshot --git-author --new-version=%s'
         #    ' --id-length=6 --ignore-branch --release' % (simple_version)))
+        distribution = "xenial"
+        sh(('gbp dch --distribution=%s --force-distribution --spawn-editor=snapshot --git-author --new-version=%s'
+           ' --id-length=6 --ignore-branch --release' % (distribution, simple_version)))
 
         deb_changelog = path('debian') / 'changelog'
-        for line in fileinput.input([deb_changelog], inplace=True):
-            print line.replace("urgency=medium", "urgency=high"),
+        for idx, line in enumerate(fileinput.input([deb_changelog], inplace=True)):
+            if idx == 0:
+                print "geonode (%s) %s; urgency=high"  % (simple_version, distribution),
+            else:
+                print line.replace("urgency=medium", "urgency=high"),
 
         # Revert workaround for git-dhc bug
         sh('rm -rf .git')
@@ -700,17 +812,18 @@ def publish():
 
     call_task('deb', options={
         'key': key,
-        'ppa': 'geonode/testing',
+        # 'ppa': 'geonode/testing',
+        'ppa': 'geonode/unstable',
     })
 
     version, simple_version = versions()
     sh('git add package/debian/changelog')
     sh('git commit -m "Updated changelog for version %s"' % version)
-    sh('git tag %s' % version)
+    sh('git tag -f %s' % version)
     sh('git push origin %s' % version)
-    sh('git tag debian/%s' % simple_version)
+    sh('git tag -f debian/%s' % simple_version)
     sh('git push origin debian/%s' % simple_version)
-    sh('git push origin master')
+    # sh('git push origin master')
     sh('python setup.py sdist upload -r pypi')
 
 
@@ -802,10 +915,22 @@ def waitfor(url, timeout=300):
     return started
 
 
+def _copytree(src, dst, symlinks=False, ignore=None):
+    if not os.path.exists(dst):
+        os.makedirs(dst)
+    for item in os.listdir(src):
+        s = os.path.join(src, item)
+        d = os.path.join(dst, item)
+        if os.path.isdir(s):
+            shutil.copytree(s, d, symlinks, ignore)
+        elif os.path.isfile(s):
+            shutil.copy2(s, d)
+
+
 def justcopy(origin, target):
     if os.path.isdir(origin):
         shutil.rmtree(target, ignore_errors=True)
-        shutil.copytree(origin, target)
+        _copytree(origin, target)
     elif os.path.isfile(origin):
         if not os.path.exists(target):
             os.makedirs(target)
