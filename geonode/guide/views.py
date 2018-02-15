@@ -25,9 +25,9 @@ from geonode import settings
 # Allow authenticated users to see User PDF, and admins users to see the others
 def PdfGuideView(request,role):
     if  request.user.is_superuser or request.user.is_authenticated() and role == 'User':
-        with open(settings.MEDIA_ROOT + '/guides/CityData_' + role + '_Guide.pdf', 'r') as pdf:
+        with open(settings.MEDIA_ROOT + '/guides/PLuSData_' + role + '_Guide.pdf', 'r') as pdf:
             response = HttpResponse(pdf.read(), content_type='application/pdf')
-            response['Content-Disposition'] = 'inline;filename=CityData_' + role + '_Guide.pdf'
+            response['Content-Disposition'] = 'inline;filename=PLuSData_' + role + '_Guide.pdf'
             return response
     else:
         return TemplateResponse(request, '401.html', {}, status=401).render()
