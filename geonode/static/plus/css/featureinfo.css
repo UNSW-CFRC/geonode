@@ -1,0 +1,61 @@
+.ftrinfo {
+  /*
+  width: 200px;
+  height: 200px;
+*/
+  font-family: sans-serif;
+}
+
+.ftrinfo div {
+  /*  border: solid black 1px;*/
+}
+
+.ftrinfo .left {
+  width: 95px;
+  float: left;
+  height: 140px;
+  border-bottom: 1px solid #ddd;
+}
+
+.ftrinfo .right {
+  margin-left: 95px;
+  height: 140px;
+  border-bottom: 1px solid #ddd;
+}
+
+.ftrinfo .ftr {
+  height: 30px;
+  width: 200px;
+}
+
+.ftrinfo .big {
+  font-size: 30px;
+  margin: 1px auto;
+}
+
+.ftrinfo .small {
+  font-size: 15px;
+  margin: 0px auto;
+}
+
+.ftrinfo .left img {
+  height: 30px
+}
+
+.ftrinfo .ftr img {
+  height: 30px;
+  display: block;
+  margin: auto;
+}
+
+.ftrinfo .ftr div {
+  float: left;
+  width: 40px;
+  margin: 5px 0px;
+  height: 100%;
+}
+
+.ftrinfo p {
+  margin: 5px;
+  text-align: center;
+}
