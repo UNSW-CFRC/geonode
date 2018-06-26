@@ -61,14 +61,13 @@
 {% block title %} {{ SITE_NAME }} {% endblock %}
 
 {% block middle %}
-{{ block.super }}
 {% block hero %}
 <div class=" yellow-header">
     <div class="ui vertical yellow inverted padded one column grid page-title-wrapper">
         <div class="bottom aligned row">
             <div class="column">
                 <div class="ui container">
-                    <h1 class="page-title">Heading</h1>
+                    <h1 class="page-title">CityData</h1>
                 </div>
                 <div class="ui container">
                     <p class="tagline">Store, discover and share &ndash; data for city analytics and decision-making</p>
@@ -84,47 +83,18 @@
 </div>
 {% endblock %}
 
-    {% block mainbody %}
-        <div class="container">
-          <div class="row home-facets">
-          {% with facet_type='home' %}
-            {% facets as facets %}
-            <div class="col-md-4">
-              <p><a href="{% url "layer_browse" %}"><i class="fa fa-square-o fa-5x rotate-45"></i></a></p>
-              <h2><a href="{% url "layer_browse" %}">{{ facets.layer|default:_("No") }} {% blocktrans count counter=facets.layer %}Layer{% plural %}Layers{% endblocktrans %}</a></h2>
-              <p>{% trans "Click to search for geospatial data published by other users, organizations and public sources. Download data in standard formats." %}</p>
-              {% if user.is_authenticated %}
-              <p class="text-center"><a class="btn btn-default" href="{% url "layer_upload" %}" role="button">{% trans "Add layers" %} &raquo;</a></p>
-              {% else %}
-              <p class="text-center"><a class="btn btn-default" href="{% url "layer_browse" %}" role="button">{% trans "Explore layers" %} &raquo;</a></p>
-              {% endif %}
-            </div>
-            <div class="col-md-4">
-              <p><a href="{% url "maps_browse" %}"><i class="fa fa-map-marker fa-5x"></i></a></p>
-              <h2><a href="{% url "maps_browse" %}">{{ facets.map|default:_("No") }} {% blocktrans count counter=facets.map %}Map{% plural %}Maps{% endblocktrans %}</a></h2>
-              <p>{% trans "Data is available for browsing, aggregating and styling to generate maps which can be shared publicly or restricted to specific users only." %}</p>
-              {% if user.is_authenticated %}
-              <p><a class="btn btn-default" href="{% url "new_map" %}" role="button">{% trans "Create maps" %} &raquo;</a></p>
-              {% else %}
-              <p><a class="btn btn-default" href="{% url "maps_browse" %}" role="button">{% trans "Explore maps" %} &raquo;</a></p>
-              {% endif %}
-            </div>
-            <div class="col-md-4">
-              <p><a href="{% url "profile_browse" %}"><i class="fa fa-user fa-5x"></i></a></p>
-              <h2><a href="{% url "profile_browse" %}">{{ facets.user|default:_("No") }} {% blocktrans count counter=facets.user %}User{% plural %}Users{% endblocktrans %}</a></h2>
-              <p>CityData allows registered users to easily upload geospatial data in several formats including shapefile and GeoTiff.</p>
-              <p><a class="btn btn-default" href="{% url "profile_browse" %}" role="button">{% trans "See users" %} &raquo;</a></p>
-            </div>
-          {% endwith %}
-          </div>
-        </div>
-        {% verbatim %}
-        <div ng-app="featured">
-          <div ng-repeat="item in featured">
-            <!--{{ item.title }}-->
-          </div>
-        </div>
-        {% endverbatim %}
-    {% endblock %}
+<div class="container" style="border: solid 1px black; padding-top: 30px; padding-bottom: 30px; margin-top: 30px; background-color: #fff5cc">
+    <h1>
+        CityData is down for maintenance
+    </h1>
 
+    <h3>
+      Tuesday 26th June 2018
+    </h3>
+
+    <p>
+        CityData is moving to a new server. We expect to resume service by 11pm AEST.
+        &ndash; <a href="mailto:citydata@unsw.edu.au">CityData admin</a>
+    </p>
+</div>
 {% endblock %}
