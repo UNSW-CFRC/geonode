@@ -65,12 +65,15 @@ urlpatterns = patterns('',
                        (r'^guide/', include('geonode.guide.urls')),
 
                        url(r'^developer/$', TemplateView.as_view(template_name='developer.html'), name='developer'),
-                       
+
                        # Layer views
                        (r'^layers/', include('geonode.layers.urls')),
 
                        # Map views
                        (r'^maps/', include('geonode.maps.urls')),
+
+                       # Thing views
+                       (r'^things/', include('geonode.things.urls')),
 
                        # Catalogue views
                        (r'^catalogue/', include('geonode.catalogue.urls')),
@@ -112,7 +115,7 @@ urlpatterns = patterns('',
                        (r'^documents/', include('geonode.documents.urls')),
                        (r'^services/', include('geonode.services.urls')),
                        url(r'', include(api.urls)),
-                       
+
                        # Keep out web crawlers: dev and test sites only
                        (r'^robots.txt$', lambda r: HttpResponse("User-agent: *\n Disallow: /", mimetype="text/plain")),
                        )
