@@ -1,5 +1,5 @@
 # from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotAllowed, HttpResponseServerError
-from django.shortcuts import redirect # , render, get_object_or_404
+from django.shortcuts import redirect, render # , get_object_or_404
 import requests
 import json
 
@@ -36,10 +36,10 @@ def myair_dashboard(request, id):
     dash_url = ftr['properties']['DashURL']
     return redirect(dash_url)
 
-# def myair_view(request, id, template='myair/index.html'):
-#     '''
-#     View myair as html
-#     '''
-#     return render(request, template, context=context_dict)
+def myair_view(request, id, template='myair/index.html'):
+    '''
+    View myair as html
+    '''
+    return render(request, template)
 
 # def myair_latest(request, id, key='C02'):

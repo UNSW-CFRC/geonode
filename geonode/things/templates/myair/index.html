@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="/static/myair/css/main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Add minus icon for collapse element which is open by default
+      $(".collapse.in").each(function() {
+        $(this).siblings(".panel-heading").find(".glyphicon").addClass("glyphicon-minus").removeClass("glyphicon-plus");
+      });
+
+      // Toggle plus minus icon on show hide of collapse element
+      $(".collapse").on('show.bs.collapse', function() {
+        $(this).parent().find(".glyphicon").removeClass("glyphicon-plus").addClass("glyphicon-minus");
+      }).on('hide.bs.collapse', function() {
+        $(this).parent().find(".glyphicon").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#myair">myair</a></li>
+    <li><a data-toggle="tab" href="#charts">charts</a></li>
+    <li><a data-toggle="tab" href="#about">about CO<sub>2</sub></a></li>
+  </ul>
+  <div class="tab-content">
+    <div id="myair" class="tab-pane fade in active">
+      <div id="deviceImage">
+        <div id="squiggle"></div>
+        <div id="sensor"><img src="/static/myair/img/sensor.png"></div>
+        <span id="blueNote"><p>WiFi indicator</p></span>
+      </div>
+      <div id="sliderDiv">
+        <div id="outputText">
+          <table><tbody><tr>
+            <td>CO<sub>2</sub>: <span id="valText">very good</span></td>
+            <td class="right"><span id="val">500</span> ppm</td>
+          </tr></tbody></table>
+        </div>
+        <div class="explain">
+          <img src="/static/myair/img/swipe_left_right.svg" alt="Icon: Rakhmat Setiawan from the Noun Project" title="Icon: Rakhmat Setiawan from the Noun Project">
+          <p>
+             Drag the slider to see how <i>myair</i>'s colour changes with CO<sub>2</sub>.
+          </p>
+        </div>
+        <input type="range" min="000" max="5000" value="500" class="slider" id="myRange">
+      </div>
+      <script src="/static/myair/js/main.js"></script>
+    </div>
+    <div id="charts" class="tab-pane fade">
+      <iframe src="https://citysensors.be.unsw.edu.au/dashboard/4410b2f0-e0ce-11e8-9f2e-617e445ac54c?publicId=bd68bff0-5ef4-11e8-b424-59584aa8a7f5"></iframe>
+    </div>
+    <div id="about" class="tab-pane fade">
+      <h1>Carbon dioxide (CO<sub>2</sub>)</h1>
+      <div class="panel-group" id="accordion">
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-plus"></span>
+                        What is CO<sub>2</sub>?</a>
+                  </h4>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse in">
+            <div class="panel-body">
+              <img src="/static/myair/img/Carbon-dioxide-3D-vdW_redBlue.png">
+              <p>
+                Each carbon dioxide (CO<sub>2</sub>) molecule has a carbon atom double bonded to two oxygen atoms.
+              </p>
+
+              <p>
+                CO<sub>2</sub> is a colourless odorless gas occuring naturally in Earth's atmosphere at trace levels.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-plus"></span>
+                        CO<sub>2</sub> in your room</a>
+                  </h4>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="panel-body">
+              <img src="/static/myair/img/myair.jpg">
+              <p>Indoor CO<sub>2</sub> ranges from atmospheric <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">405 ppm</a> to over 2500 ppm depending on room occupancy and ventilation.
+                <p><a href="https://newscenter.lbl.gov/2012/10/17/elevated-indoor-carbon-dioxide-impairs-decision-making-performance/" target="_new">Research</a> indicates that elevated CO<sub>2</sub> impacts decision-making above 1000 ppm and may have a
+                  significant impact at 2500 ppm.</p>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-plus"></span>
+                        CO<sub>2</sub> in our atmosphere</a>
+                  </h4>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse">
+            <div class="panel-body">
+              <img src="/static/myair/img/earth.png">
+              <p>
+                CO<sub>2</sub> has now reached over 405 ppm (parts per million) in our atmosphere, 35% higher than any time before the industrial revolution for at least the last
+                <a href="http://theconversation.com/the-three-minute-story-of-800-000-years-of-climate-change-with-a-sting-in-the-tail-73368" target="_new">800,000 years</a>. This is a "direct existential threat" according to the
+                <a href="https://www.un.org/sg/en/content/sg/statement/2018-09-10/secretary-generals-remarks-climate-change-delivered" target="_new">UN Secretary-General</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $( "#myRange" ).on( 'touchend mouseup', function() {
+      $('#val').html(500);
+      $('#myRange').val(500);
+      $('#valText').html('very good');
+      $('#valText').css('color', 'hsla(75, 42%, 54%, 1)');
+    });
+  </script>
+</body>
+
+</html>
