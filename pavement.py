@@ -67,8 +67,8 @@ def grab(src, dest, name):
         else:
             urllib.urlretrieve(str(src), str(dest))
 
-GEOSERVER_URL = "http://build.geonode.org/geoserver/latest/geoserver.war"
-DATA_DIR_URL = "http://build.geonode.org/geoserver/latest/data.zip"
+GEOSERVER_URL = "https://build.geo-solutions.it/geonode/geoserver/latest/geoserver-2.7.4.war"
+DATA_DIR_URL = "https://build.geo-solutions.it/geonode/geoserver/latest/data-2.7.4.zip"
 JETTY_RUNNER_URL = ("http://repo2.maven.org/maven2/org/mortbay/jetty/jetty-runner/"
                     "8.1.8.v20121106/jetty-runner-8.1.8.v20121106.jar")
 
@@ -114,13 +114,14 @@ def _install_data_dir():
     original_data_dir = path('geoserver/geoserver/data')
     justcopy(original_data_dir, target_data_dir)
 
-    config = path('geoserver/data/security/auth/geonodeAuthProvider/config.xml')
-    with open(config) as f:
-        xml = f.read()
-        m = re.search('baseUrl>([^<]+)', xml)
-        xml = xml[:m.start(1)] + "http://localhost:8000/" + xml[m.end(1):]
-        with open(config, 'w') as f:
-            f.write(xml)
+    # Path not found
+    # config = path('geoserver/data/security/auth/geonodeAuthProvider/config.xml')
+    # with open(config) as f:
+    #     xml = f.read()
+    #     m = re.search('baseUrl>([^<]+)', xml)
+    #     xml = xml[:m.start(1)] + "http://localhost:8000/" + xml[m.end(1):]
+    #     with open(config, 'w') as f:
+    #         f.write(xml)
 
 
 @task
