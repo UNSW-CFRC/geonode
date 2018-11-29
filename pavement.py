@@ -114,13 +114,14 @@ def _install_data_dir():
     original_data_dir = path('geoserver/geoserver/data')
     justcopy(original_data_dir, target_data_dir)
 
-    config = path('geoserver/data/security/auth/geonodeAuthProvider/config.xml')
-    with open(config) as f:
-        xml = f.read()
-        m = re.search('baseUrl>([^<]+)', xml)
-        xml = xml[:m.start(1)] + "http://localhost:8000/" + xml[m.end(1):]
-        with open(config, 'w') as f:
-            f.write(xml)
+    # Path not found
+    # config = path('geoserver/data/security/auth/geonodeAuthProvider/config.xml')
+    # with open(config) as f:
+    #     xml = f.read()
+    #     m = re.search('baseUrl>([^<]+)', xml)
+    #     xml = xml[:m.start(1)] + "http://localhost:8000/" + xml[m.end(1):]
+    #     with open(config, 'w') as f:
+    #         f.write(xml)
 
 
 @task
