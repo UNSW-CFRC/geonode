@@ -67,8 +67,8 @@ def grab(src, dest, name):
         else:
             urllib.urlretrieve(str(src), str(dest))
 
-GEOSERVER_URL = "https://build.geo-solutions.it/geonode/geoserver/latest/geoserver.war"
-DATA_DIR_URL = "https://build.geo-solutions.it/geonode/geoserver/latest/data.zip"
+GEOSERVER_URL = "https://build.geo-solutions.it/geonode/geoserver/latest/geoserver-2.7.4.war"
+DATA_DIR_URL = "https://build.geo-solutions.it/geonode/geoserver/latest/data-2.7.4.zip"
 JETTY_RUNNER_URL = ("http://repo2.maven.org/maven2/org/mortbay/jetty/jetty-runner/"
                     "8.1.8.v20121106/jetty-runner-8.1.8.v20121106.jar")
 
