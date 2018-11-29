@@ -46,13 +46,13 @@ def _get_token(auth_url, auth_headers):
     '''
     Get JSON web token from Thingsboard tenant credentials
     '''
-username = 'citydata@unsw.edu.au'
-password = 'U,V3Va'
+    username = 'citydata@unsw.edu.au'
+    password = 'U,V3Va'
 
-auth_data = json.dumps({
-    'username': username,
-    'password': password
-})
+    auth_data = json.dumps({
+        'username': username,
+        'password': password
+    })
 
     import logging
     logger = logging.getLogger("geonode.things.views")
