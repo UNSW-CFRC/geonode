@@ -271,6 +271,9 @@ INSTALLED_APPS = (
     'django.contrib.humanize',
     'django.contrib.gis',
 
+    # Redirects - added by JD 2018-06-06
+    'django.contrib.redirects',
+
     # Third party apps
 
     # Utility
@@ -335,13 +338,21 @@ LOGGING = {
         'mail_admins': {
             'level': 'ERROR', 'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler',
-        }
+        },
+        'applogfile': {
+            'level':'DEBUG',
+            'class':'logging.handlers.RotatingFileHandler',
+            'filename': '/mnt/data/geonode/geonode/geonode/things/log',
+            'maxBytes': 1024*1024*15, # 15MB
+            'backupCount': 10,
+        },
     },
     "loggers": {
         "django": {
             "handlers": ["console"], "level": "ERROR", },
         "geonode": {
-            "handlers": ["console"], "level": "ERROR", },
+            # "handlers": ["console"], "level": "ERROR", },
+            'handlers': ['applogfile'], 'level': 'DEBUG', },
         "gsconfig.catalog": {
             "handlers": ["console"], "level": "ERROR", },
         "owslib": {
@@ -388,6 +399,9 @@ MIDDLEWARE_CLASSES = (
     # It sets temporary the involved layers as public before restoring the permissions.
     # Beware that for few seconds the involved layers are public there could be risks.
     # 'geonode.middleware.PrintProxyMiddleware',
+
+    # Redirects - added by JD 2018-06-06
+    'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
 )
 
 
@@ -873,7 +887,7 @@ except ImportError:
     pass
 
 try:
-    BING_LAYER = {    
+    BING_LAYER = {
         "source": {
             "ptype": "gxp_bingsource",
             "apiKey": BING_API_KEY

@@ -40,8 +40,8 @@
       <div id="sliderDiv">
         <div id="outputText">
           <table><tbody><tr>
-            <td>CO<sub>2</sub>: <span id="valText">very good</span></td>
-            <td class="right"><span id="val">500</span> ppm</td>
+            <td>CO<sub>2</sub>: <span id="valText"></span></td>
+            <td class="right"><span id="val"></span></td>
           </tr></tbody></table>
         </div>
         <div class="explain">
@@ -118,14 +118,6 @@
       </div>
     </div>
   </div>
-  <script>
-    $( "#myRange" ).on( 'touchend mouseup', function() {
-      $('#val').html(500);
-      $('#myRange').val(500);
-      $('#valText').html('very good');
-      $('#valText').css('color', 'hsla(75, 42%, 54%, 1)');
-    });
-  </script>
 </body>
 
 </html>
