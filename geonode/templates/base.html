@@ -503,7 +503,7 @@
           {% endblock contactus %}
           {% block credits %}
           <ul class="list-unstyled">
-            <li>{{ project_name | default('')}} {{ project_VERSION  | default('') }} {% trans "Powered by" %} <a href="http://geonode.org">{% trans "GeoNode" %}</a> <em>{% trans "version" %} {{ VERSION }}</em></li>
+            <li>{{ project_name | default('', true)}} {{ project_VERSION  | default('', true) }} {% trans "Powered by" %} <a href="http://geonode.org">{% trans "GeoNode" %}</a> <em>{% trans "version" %} {{ VERSION }}</em></li>
             <li><a href="{% url "developer" %}">{% trans "Developers" %}</a> | <a href="{% url "about" %}">{% trans "About" %}</a><li>
           </ul>
           {% endblock credits %}
