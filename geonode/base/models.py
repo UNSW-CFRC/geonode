@@ -50,6 +50,8 @@ from agon_ratings.models import OverallRating
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
 
+from guardian.shortcuts import get_anonymous_user, get_objects_for_user
+
 from geonode.base.enumerations import (
     LINK_TYPES,
     ALL_LANGUAGES,
@@ -61,6 +63,7 @@ from geonode.utils import (
     bbox_to_wkt,
     forward_mercator)
 from geonode.security.models import PermissionLevelMixin
+from geonode.security.utils import get_visible_resources
 from taggit.managers import TaggableManager, _TaggableManager
 from taggit.models import TagBase, ItemBase
 from treebeard.mp_tree import MP_Node
@@ -327,43 +330,69 @@ class HierarchicalKeyword(TagBase, MP_Node):
     node_order_by = ['name']
 
     @classmethod
-    def dump_bulk_tree(cls, parent=None, keep_ids=True):
+    def dump_bulk_tree(cls, user, parent=None, keep_ids=True, type=None):
         """Dumps a tree branch to a python data structure."""
+        user = user or get_anonymous_user()
+        ctype_filter = [type, ] if type else ['layer', 'map', 'document']
         qset = cls._get_serializable_model().get_tree(parent)
+        if settings.SKIP_PERMS_FILTER:
+            resources = ResourceBase.objects.all()
+        else:
+            resources = get_objects_for_user(
+                user,
+                'base.view_resourcebase'
+            )
+        resources = resources.filter(
+            polymorphic_ctype__model__in=ctype_filter,
+        )
+        resources = get_visible_resources(
+            resources,
+            user,
+            admin_approval_required=settings.ADMIN_MODERATE_UPLOADS,
+            unpublished_not_visible=settings.RESOURCE_PUBLISHING,
+            private_groups_not_visibile=settings.GROUP_PRIVATE_RESOURCES)
         ret, lnk = [], {}
         try:
-            for pyobj in qset:
+            for pyobj in qset.order_by('name'):
                 serobj = serializers.serialize('python', [pyobj])[0]
                 # django's serializer stores the attributes in 'fields'
                 fields = serobj['fields']
                 depth = fields['depth'] or 1
-                fields['text'] = fields['name']
-                fields['href'] = fields['slug']
-                del fields['name']
-                del fields['slug']
-                del fields['path']
-                del fields['numchild']
-                del fields['depth']
-                if 'id' in fields:
-                    # this happens immediately after a load_bulk
-                    del fields['id']
+                tags_count = 0
+                try:
+                    tags_count = TaggedContentItem.objects.filter(
+                        content_object__in=resources,
+                        tag=HierarchicalKeyword.objects.get(slug=fields['slug'])).count()
+                except Exception:
+                    pass
+                if tags_count > 0:
+                    fields['text'] = fields['name']
+                    fields['href'] = fields['slug']
+                    fields['tags'] = [tags_count]
+                    del fields['name']
+                    del fields['slug']
+                    del fields['path']
+                    del fields['numchild']
+                    del fields['depth']
+                    if 'id' in fields:
+                        # this happens immediately after a load_bulk
+                        del fields['id']
+                    newobj = {}
+                    for field in fields:
+                        newobj[field] = fields[field]
+                    if keep_ids:
+                        newobj['id'] = serobj['pk']
 
-                newobj = {}
-                for field in fields:
-                    newobj[field] = fields[field]
-                if keep_ids:
-                    newobj['id'] = serobj['pk']
-
-                if (not parent and depth == 1) or\
-                   (parent and depth == parent.depth):
-                    ret.append(newobj)
-                else:
-                    parentobj = pyobj.get_parent()
-                    parentser = lnk[parentobj.pk]
-                    if 'nodes' not in parentser:
-                        parentser['nodes'] = []
-                    parentser['nodes'].append(newobj)
-                lnk[pyobj.pk] = newobj
+                    if (not parent and depth == 1) or\
+                       (parent and depth == parent.depth):
+                        ret.append(newobj)
+                    else:
+                        parentobj = pyobj.get_parent()
+                        parentser = lnk[parentobj.pk]
+                        if 'nodes' not in parentser:
+                            parentser['nodes'] = []
+                        parentser['nodes'].append(newobj)
+                    lnk[pyobj.pk] = newobj
         except Exception:
             pass
         return ret
