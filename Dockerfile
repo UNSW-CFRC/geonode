@@ -2,8 +2,8 @@ FROM geonode/geonode:2.10.3
 MAINTAINER GeoNode development team
 
 COPY requirements.txt /usr/src/app/
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+RUN pip install pip==20.1
+RUN pip install -r requirements.txt --upgrade
 RUN python manage.py makemigrations --settings=geonode.settings
 RUN python manage.py migrate --settings=geonode.settings
 
